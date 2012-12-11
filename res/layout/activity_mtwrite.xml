@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MTWrite" >
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rbSingle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Single" />
+
+        <RadioButton
+            android:id="@+id/rbMTMultiFiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MultiThreadMultiFile" />
+
+        <RadioButton
+            android:id="@+id/rbMTOneFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MultiThreadOneFile" />
+        
+         <RadioButton
+            android:id="@+id/rbMTOneFileNR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MultiThreadOneFileNoRandom" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnBegin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Begin" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+</LinearLayout>

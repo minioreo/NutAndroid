@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dip" >
+
+    <TextView
+        android:id="@+id/tv11"
+        android:layout_width="@dimen/text_column_width"
+        android:layout_height="40dip"
+        android:gravity="center_vertical"
+        android:text="name:" />
+
+    <EditText
+        android:id="@+id/et12"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/tv11"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/tv21"
+        android:layout_width="@dimen/text_column_width"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/tv11"
+        android:gravity="center_vertical"
+        android:text="pwd:" />
+
+    <EditText
+        android:id="@+id/et22"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/et12"
+        android:layout_toRightOf="@id/tv21"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/tv31"
+        android:layout_width="@dimen/text_column_width"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv21"
+        android:gravity="center_vertical"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/dt32"
+        android:layout_width="@dimen/text_column_width"
+        android:layout_height="40dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/et22"
+        android:layout_toRightOf="@id/tv31"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/btnOK"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Click" />
+
+</RelativeLayout>

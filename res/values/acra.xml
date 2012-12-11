@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="acra_toast">NutAndroid crashed,preparing report.</string>
+    <string name="acra_dlg_txt">Would you like to send error report via email to us? \r\nThis will help us to fix it.</string>
+	<string name="acra_dlg_comment_prpmpt">More infomation you can provide(optional)</string>
+</resources>

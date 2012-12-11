@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".IOSpeedActivity" >
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rbRandom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="randomAccessFile" />
+
+        <RadioButton
+            android:id="@+id/rbChannel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="channel" />
+
+        <RadioButton
+            android:id="@+id/rbMemoryMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="memory map" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnBegin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Begin" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+</LinearLayout>

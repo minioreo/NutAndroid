@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="text" />
+
+    <com.example.nutandroid.view.PieView
+        android:id="@+id/nutPie"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+    </com.example.nutandroid.view.PieView>
+
+    <com.example.nutandroid.view.BarView
+        android:id="@+id/nutBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+    </com.example.nutandroid.view.BarView>
+
+</LinearLayout>

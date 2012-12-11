@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NutAndroid</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_customview">CustomviewActivity</string>
+    <string name="title_activity_ring_view">RingViewActivity</string>
+    <string name="title_activity_relative_position">RelativePosition</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="title_activity_custom_tab">CustomTab</string>
+    <string name="title_activity_layout">LayoutActivity</string>
+    <string name="title_activity_surface">SurfaceActivity</string>
+    <string name="title_activity_gesture_surface">GestureSurfaceActivity</string>
+    <string name="title_activity_window_back_ground">WindowBackGroundActivity</string>
+    <string name="title_activity_test_flicker_acivity">TestFlickerAcivity</string>
+    <string name="title_activity_tab1">Tab1Activity</string>
+    <string name="title_activity_tab2">Tab2Activity</string>
+    <string name="title_activity_download">DownloadActivity</string>
+    <string name="title_activity_iospeed">IOSpeedActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_mtwrite">MTWrite</string>
+    <string name="title_activity_crash">CrashActivity</string>
+    <string name="title_activity_simple_test">SimpleTestActivity</string>
+    <string name="title_activity_speed_test_view">SpeedTestViewActivity</string>
+
+</resources>

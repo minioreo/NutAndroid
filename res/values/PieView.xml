@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PV_TXT_USED">Used</string>
+    <string name="PV_TXT_UNUSED">Unused</string>
+    <string name="PV_TXT_NEW">New</string>
+</resources>
