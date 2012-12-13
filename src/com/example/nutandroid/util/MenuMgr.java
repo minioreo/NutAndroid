@@ -2,6 +2,7 @@ package com.example.nutandroid.util;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -69,6 +70,7 @@ public class MenuMgr
 		{
 			item = new NutMenuItem(path, cls);
 			rootNodes.add(item);
+			Collections.sort(rootNodes);
 			allItems.put(path, item);
 			paths.add(path);
 		}
@@ -79,6 +81,7 @@ public class MenuMgr
 			allItems.put(path, parentItem);
 			paths.add(path);
 			rootNodes.add(parentItem);
+			Collections.sort(rootNodes);
 		}
 	}
 
@@ -94,11 +97,14 @@ public class MenuMgr
 
 	public static class NutMenuItem implements Serializable, Comparable<NutMenuItem>
 	{
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		public static final byte ITEM_TYPE_ACTIVITY = 0;
 		public static final byte ITEM_TYPE_CATAGORY = 1;
 		private byte itemType;
 		private String itemName;
-		private String itemPath;
 		private Class<? extends Activity> activityClass;
 		private ArrayList<NutMenuItem> subItems;
 
@@ -142,6 +148,7 @@ public class MenuMgr
 				throw new UnsupportedOperationException("activity have no sub items.");
 			}
 			subItems.add(item);
+			Collections.sort(subItems);
 		}
 
 		public Class<? extends Activity> getActivityClass()

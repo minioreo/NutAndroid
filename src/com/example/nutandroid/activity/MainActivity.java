@@ -48,7 +48,6 @@ public class MainActivity extends Activity
 	{
 		MenuMgr menuMgr = NutApplication.getInstance().getMenuMgr();
 		List<NutMenuItem> rootItems = menuMgr.getRootItems();
-		Collections.sort(rootItems);
 		ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
 		Iterator<NutMenuItem> iterator = rootItems.iterator();
 		while (iterator.hasNext())

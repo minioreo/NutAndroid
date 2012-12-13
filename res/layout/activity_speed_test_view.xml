@@ -4,4 +4,10 @@
     android:layout_height="match_parent"
     tools:context=".SpeedTestViewActivity" >
 
+    <com.example.nutandroid.view.GaugeView
+        android:id="@+id/gauge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.example.nutandroid.view.GaugeView>
+
 </LinearLayout>

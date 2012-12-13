@@ -9,10 +9,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.example.nutandroid.R;
+import com.example.nutandroid.util.NutLogger;
 
 @ContentView(R.layout.activity_crash)
 public class CrashActivity extends RoboActivity implements OnClickListener
 {
+	private final static NutLogger logger = NutLogger.getLogger(CrashActivity.class);
 
 	@InjectView(R.id.btnCrash)
 	private Button btnCrash;
@@ -24,6 +26,7 @@ public class CrashActivity extends RoboActivity implements OnClickListener
 	{
 		super.onCreate(savedInstanceState);
 		btnCrash.setOnClickListener(this);
+//		logger.debug("application context equals activity context:{}", this.c)
 	}
 
 	@Override
