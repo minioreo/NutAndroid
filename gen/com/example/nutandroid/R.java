@@ -57,6 +57,7 @@ public final class R {
         public static final int btnBegin=0x7f08000c;
         public static final int btnCrash=0x7f080000;
         public static final int btnDownload=0x7f080005;
+        public static final int btnGauge=0x7f080024;
         public static final int btnOK=0x7f080020;
         public static final int customViewTitle=0x7f080003;
         public static final int dt32=0x7f08001f;
@@ -64,8 +65,8 @@ public final class R {
         public static final int et12=0x7f08001b;
         public static final int et22=0x7f08001d;
         public static final int gauge=0x7f080023;
-        public static final int indicator_btn=0x7f080028;
-        public static final int indicator_text=0x7f080027;
+        public static final int indicator_btn=0x7f080029;
+        public static final int indicator_text=0x7f080028;
         public static final int lvMain=0x7f08000e;
         public static final int nutBar=0x7f080019;
         public static final int nutPie=0x7f080018;
@@ -80,11 +81,11 @@ public final class R {
         public static final int rbSingle=0x7f08000f;
         public static final int ringViewTitle=0x7f080021;
         public static final int spThreadCount=0x7f080013;
-        public static final int surface=0x7f080024;
-        public static final int tab2Surface=0x7f080025;
+        public static final int surface=0x7f080025;
+        public static final int tab2Surface=0x7f080026;
         public static final int tabImg1=0x7f080002;
         public static final int tabTV1=0x7f080001;
-        public static final int timeSurface=0x7f080026;
+        public static final int timeSurface=0x7f080027;
         public static final int tv11=0x7f08001a;
         public static final int tv21=0x7f08001c;
         public static final int tv31=0x7f08001e;

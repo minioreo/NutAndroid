@@ -1,11 +1,14 @@
 package com.example.nutandroid.view;
 
+import java.util.concurrent.TimeUnit;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.FloatMath;
 import android.view.View;
 
 import com.example.nutandroid.R;
@@ -25,10 +28,14 @@ public class GaugeView extends View
 	private Drawable mBitmapPointer2;
 	private int mTotalWidth;
 	private int mTotalHeight;
-	private int mAngle = 0;
+	private int mAngle = 0, mCurrentAngle = 0;
 	private final Paint mPaintDialerBox = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private final Paint mPaintPointerBox1 = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private final Paint mPaintPointerBox2 = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+	private long mAnimationStartTime;
+
+	private static final float sAnglePerNanoSecond = 360f / TimeUnit.NANOSECONDS.convert(2, TimeUnit.SECONDS);
 
 	public GaugeView(Context context, AttributeSet attrs, int defStyle)
 	{
@@ -66,6 +73,7 @@ public class GaugeView extends View
 			if (mAngle != angle)
 			{
 				mAngle = angle;
+				mAnimationStartTime = System.nanoTime();
 				invalidate();
 			}
 		}
@@ -104,8 +112,7 @@ public class GaugeView extends View
 
 		float scale = Math.min(hScale, vScale);
 
-		setMeasuredDimension(resolveSize((int) (mDialWidth * scale), widthMeasureSpec),
-				resolveSize((int) (mDialHeight * scale), heightMeasureSpec));
+		setMeasuredDimension(resolveSize((int) (mDialWidth * scale), widthMeasureSpec), resolveSize((int) (mDialHeight * scale), heightMeasureSpec));
 	}
 
 	@Override
@@ -119,10 +126,31 @@ public class GaugeView extends View
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
-		logger.debug("total width:{},total height:{}", mTotalWidth, mTotalHeight);
 		int x = mTotalWidth / 2;
 		int y = mTotalHeight / 2;
 
+		boolean animationFinished = true;
+		if (mCurrentAngle != mAngle)
+		{
+			boolean reverse = mAngle < mCurrentAngle;
+			long duration = System.nanoTime() - mAnimationStartTime;
+			int delta = (int) FloatMath.ceil((sAnglePerNanoSecond * duration));
+			if (reverse)
+			{
+				delta = -delta;
+			}
+			mCurrentAngle += delta;
+			if ((reverse && mCurrentAngle < mAngle) || (!reverse && mCurrentAngle > mAngle))
+			{
+				mCurrentAngle = mAngle;
+				animationFinished = true;
+			}
+			else
+			{
+				animationFinished = false;
+			}
+
+		}
 		final Drawable bg = mBackGround;
 		bg.setBounds(0, 0, mTotalWidth, mTotalHeight);
 		bg.draw(canvas);
@@ -142,32 +170,36 @@ public class GaugeView extends View
 			canvas.save();
 			canvas.scale(scale, scale, x, y);
 			dial.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2));
-			canvas.drawRect(dial.getBounds(), mPaintDialerBox);
+			// canvas.drawRect(dial.getBounds(), mPaintDialerBox);
 			// logger.debug("dialer bounds:{}", dial.getBounds());
 		}
 
 		dial.draw(canvas);
 
 		canvas.save();
-		canvas.rotate(mAngle, x, y);
+		canvas.rotate(mCurrentAngle, x, y);
 		final Drawable pointer1 = mBitmapPointer1, pointer2 = mBitmapPointer2;
 		w = pointer1.getIntrinsicWidth();
 		h = pointer1.getIntrinsicHeight();
 		pointer1.setBounds(x - (w / 2), y - h, x + (w / 2), y);
-		canvas.drawRect(pointer1.getBounds(), mPaintPointerBox1);
+		// canvas.drawRect(pointer1.getBounds(), mPaintPointerBox1);
 		// logger.debug("pointer1 bounds:{}", pointer1.getBounds());
 		pointer1.draw(canvas);
 		w = pointer2.getIntrinsicWidth();
 		h = pointer2.getIntrinsicHeight();
 		pointer2.setBounds(x - w / 2, y, x + w / 2, y + h);
 		// logger.debug("pointer2 bounds:{}", pointer2.getBounds());
-		canvas.drawRect(pointer2.getBounds(), mPaintPointerBox2);
+		// canvas.drawRect(pointer2.getBounds(), mPaintPointerBox2);
 		pointer2.draw(canvas);
 		canvas.restore();
 
 		if (scaled)
 		{
 			canvas.restore();
+		}
+		if (!animationFinished)
+		{
+			invalidate();
 		}
 	}
 }
