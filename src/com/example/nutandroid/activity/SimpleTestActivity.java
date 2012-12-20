@@ -11,8 +11,6 @@ public class SimpleTestActivity extends RoboActivity
 
 {
 
-	@InjectView(R.id.analogClock1)
-	private AnalogClock clock; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)

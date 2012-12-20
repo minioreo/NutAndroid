@@ -5,10 +5,10 @@
     android:orientation="vertical"
     tools:context=".SimpleTestActivity" >
 
-    <AnalogClock
-        android:id="@+id/analogClock1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="137dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="300dip"
+        android:text="hahahahhaha" 
+        android:background="@drawable/background"/>
 
 </LinearLayout>
