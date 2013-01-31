@@ -1,1 +1,7 @@
 /bin
+target
+
+/ant.properties
+
+/local.properties
+.settings
